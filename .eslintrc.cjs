@@ -6,15 +6,15 @@ module.exports = {
       version: 'detect',
     },
   },
-  ignorePatterns: ['dist', '.eslintrc.cjs'],
+  ignorePatterns: [ 'dist', 'dist-electron', 'release', '.eslintrc.cjs' ],
   parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaVersion: 'latest',
     sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
+    project: [ './tsconfig.json', './tsconfig.node.json' ],
     tsconfigRootDir: __dirname,
   },
-  plugins: ['react-refresh'],
+  plugins: [ 'react-refresh' ],
   extends: [
     'standard',
     'eslint:recommended',
@@ -29,6 +29,6 @@ module.exports = {
     'eslint-config-prettier',
   ],
   rules: {
-    'react-refresh/only-export-components': ['warn', { allowConstantExport: true }],
+    'react-refresh/only-export-components': [ 'warn', { allowConstantExport: true } ],
   },
 }

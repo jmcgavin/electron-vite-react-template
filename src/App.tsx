@@ -1,6 +1,4 @@
 import './App.css'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/electron-vite.animate.svg'
 
 const App = () => {
   const handleElectronViteClick = () => {
@@ -18,10 +16,10 @@ const App = () => {
         <br />+<br />
         React
       </h1>
-      <section className="container">
-        <img src={viteLogo} alt="Vite logo" onClick={handleElectronViteClick} />
+      <section className='container'>
+        <img src='/electron-vite.animate.svg' alt='Vite logo' onClick={handleElectronViteClick} />
         +
-        <img src={reactLogo} className="react" alt="React logo" onClick={handleReactClick} />
+        <img src='/react.svg' className='react' alt='React logo' onClick={handleReactClick} />
       </section>
     </>
   )
