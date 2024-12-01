@@ -1,4 +1,4 @@
-import './App.css'
+import './App.module.css'
 
 const App = () => {
   const handleElectronViteClick = () => {
@@ -13,13 +13,15 @@ const App = () => {
     <>
       <h1>
         Electron Vite
-        <br />+<br />
+        <br />
+        +
+        <br />
         React
       </h1>
-      <section className='container'>
-        <img src='/electron-vite.animate.svg' alt='Vite logo' onClick={handleElectronViteClick} />
+      <section className="container">
+        <img src="/electron-vite.animate.svg" alt="Vite logo" onClick={handleElectronViteClick} />
         +
-        <img src='/react.svg' className='react' alt='React logo' onClick={handleReactClick} />
+        <img src="/react.svg" className="react" alt="React logo" onClick={handleReactClick} />
       </section>
     </>
   )
