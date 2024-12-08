@@ -1,7 +1,10 @@
 import { contextBridge, ipcRenderer } from 'electron'
 
+export const electronAPIKey = 'electronAPI'
+export type ElectronAPI = typeof electronAPI
+
 // --------- Expose some APIs to the Renderer process ---------
-contextBridge.exposeInMainWorld('ipcRenderer', {
+const electronAPI = {
   on(...args: Parameters<typeof ipcRenderer.on>) {
     const [channel, listener] = args
     // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
@@ -23,4 +26,6 @@ contextBridge.exposeInMainWorld('ipcRenderer', {
   },
 
   // You can expose other APIs you need here...
-})
+}
+
+contextBridge.exposeInMainWorld(electronAPIKey, electronAPI)
