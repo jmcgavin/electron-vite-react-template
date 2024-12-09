@@ -1,22 +1,20 @@
-// @ts-check
-
 module.exports = {
   root: true,
   env: {
     browser: true,
-    es2020: true,
+    es6: true,
+    node: true,
   },
   settings: {
     react: {
       version: 'detect',
     },
   },
-  ignorePatterns: ['.eslintrc.cjs', 'dist', 'dist-electron', 'release'],
+  ignorePatterns: ['.eslintrc.js'],
   parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
+    project: './tsconfig.json',
     tsconfigRootDir: __dirname,
   },
   plugins: ['@typescript-eslint', 'react-refresh'],

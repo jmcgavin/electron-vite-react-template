@@ -1,7 +1,13 @@
 import { contextBridge, ipcRenderer } from 'electron'
 
+declare global {
+  interface Window {
+    // [electronAPIKey]: typeof electronAPI
+    [electronAPIKey]: import('electron').IpcRenderer
+  }
+}
+
 export const electronAPIKey = 'electronAPI'
-export type ElectronAPI = typeof electronAPI
 
 // --------- Expose some APIs to the Renderer process ---------
 const electronAPI = {
