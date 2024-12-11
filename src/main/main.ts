@@ -3,7 +3,7 @@ import contextMenu from 'electron-context-menu'
 import started from 'electron-squirrel-startup'
 import path from 'path'
 
-process.env.APP_ROOT = path.join(__dirname, '..')
+process.env.APP_ROOT = path.join(import.meta.dirname, '..')
 
 export const VITE_DEV_SERVER_URL = process.env.VITE_DEV_SERVER_URL
 export const MAIN_DIST = path.join(process.env.APP_ROOT, 'dist-electron')
@@ -21,7 +21,7 @@ const createWindow = async () => {
       webSecurity: true,
       nodeIntegration: false,
       contextIsolation: true,
-      preload: path.join(__dirname, 'preload.js'),
+      preload: path.join(import.meta.dirname, 'preload.js'),
     },
   })
 
@@ -40,7 +40,7 @@ const createWindow = async () => {
     // Open the DevTools
     mainWindow.webContents.openDevTools()
   } else {
-    await mainWindow.loadFile(path.join(__dirname, `../renderer/${MAIN_WINDOW_VITE_NAME}/index.html`))
+    await mainWindow.loadFile(path.join(import.meta.dirname, `../renderer/${MAIN_WINDOW_VITE_NAME}/index.html`))
   }
 
   // Test active push message to Renderer-process.

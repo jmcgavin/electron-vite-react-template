@@ -1,18 +1,33 @@
-import './styles.css'
 import styles from './App.module.css'
+import './global-styles.css'
+import packageConfig from '../../package.json' with { type: 'json' }
+
+const services = [
+  { name: 'Chrome', logoSrc: '/chrome.svg', version: window.electronAPI.chrome() },
+  { name: 'Electron', logoSrc: '/electron.svg', version: window.electronAPI.electron() },
+  { name: 'NodeJS', logoSrc: '/nodejs.svg', version: window.electronAPI.nodejs() },
+  { name: 'React', logoSrc: '/react.svg', version: packageConfig.dependencies.react },
+  { name: 'TypeScript', logoSrc: '/typescript.svg', version: packageConfig.devDependencies.typescript },
+  { name: 'Vite', logoSrc: '/vite.svg', version: packageConfig.devDependencies.vite },
+]
 
 const App = () => {
   return (
     <>
       <h1>Electron Boilerplate</h1>
-      <h2>Desktop application with Electron, React, Vite & TypeScript</h2>
-      <section className={styles.container}>
-        <img src="/chrome.svg" alt="Chrome logo" />
-        <img src="/electron.svg" alt="Electron logo" />
-        <img src="/nodejs.svg" alt="Node.js logo" />
-        <img src="/react.svg" alt="React logo" />
-        <img src="/typescript.svg" alt="TypeScript logo" />
-        <img src="/vite.svg" alt="Vite logo" />
+      <h2>{packageConfig.version}</h2>
+      <hr />
+      <h3>Electron desktop application with React, Vite & TypeScript</h3>
+      <section className={styles.services}>
+        {services.map((service) => (
+          <div key={service.name} className={styles.service}>
+            <img src={service.logoSrc} alt={service.name} />
+            <p>{service.name}</p>
+            <span className={styles.version}>
+              <p>{service.version.replace(/^\^/, '')}</p>
+            </span>
+          </div>
+        ))}
       </section>
     </>
   )

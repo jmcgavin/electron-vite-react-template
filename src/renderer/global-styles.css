@@ -1,0 +1,25 @@
+body {
+  color: var(--app-text-color);
+  background-color: var(--app-background-color);
+  background-size: 32px 32px;
+  background-image: linear-gradient(to right, #7070700d 1px, transparent 1px),
+    linear-gradient(to bottom, #7070700d 1px, transparent 1px);
+
+  font-family: Roboto, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  height: 100vh;
+  margin: 0;
+  text-align: center;
+  display: flex;
+  place-items: center;
+  justify-content: center;
+
+  --app-accent-color: #3f88c5;
+  --app-background-color: #e2e2e2;
+  --app-text-color: #282828;
+  --app-faded-text-color: #999999;
+}

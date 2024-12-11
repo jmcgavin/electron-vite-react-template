@@ -1,16 +1,51 @@
 h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+  font-size: 3rem;
 }
 
-.container {
-  display: flex;
-  gap: 12px;
-  align-items: center;
+h2 {
+  font-weight: normal;
+  color: var(--app-faded-text-color);
+}
+
+h3 {
   font-size: 1.5rem;
+  font-weight: normal;
+}
+
+hr {
+  border: none;
+  height: 2px;
+  background-color: var(--app-accent-color);
+}
+
+.services {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px 48px;
+  margin: 50px 0;
+}
+
+.service {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px;
+  border: solid 1px #dbdbdb;
+  border-radius: 4px;
+  background-color: #fafafa;
+  box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.1);
+}
+
+.service p {
+  margin: 0;
+}
+
+.version {
+  color: var(--app-faded-text-color);
+  margin-left: auto;
 }
 
 img {
-  height: 6em;
-  padding: 1.5em;
+  width: 2rem;
+  aspect-ratio: 1;
 }

@@ -10,6 +10,6 @@ ReactDOM.createRoot(document.getElementById('root')).render(
 )
 
 // Use contextBridge
-window.electronAPI.on('main-process-message', (_event, message) => {
-  console.log(message)
-})
+// window.electronAPI.on('main-process-message', (_event, message) => {
+//   console.log(message)
+// })
