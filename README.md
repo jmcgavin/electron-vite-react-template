@@ -2,6 +2,8 @@
 
 A prebuilt project to help kickstart the creation of desktop apps using Electron, React, Vite & Typescript.
 
+This boilerplate does not include a design system or component library. The goal is to keep this project as barebones as possible.
+
 <img src="assets/screenshot.jpg" />
 
 ## Features
@@ -114,4 +116,4 @@ The configuration file is available here:
 forge.config.js
 ```
 
-For further information, you visit [Electron Forge Configuration](https://www.electronforge.io/configuration)
+For further information visit [Electron Forge Configuration](https://www.electronforge.io/configuration).
