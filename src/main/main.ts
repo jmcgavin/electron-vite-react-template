@@ -1,4 +1,4 @@
-import { BrowserWindow, app, shell } from 'electron'
+import { BrowserWindow, app, dialog, ipcMain, shell } from 'electron'
 import contextMenu from 'electron-context-menu'
 import started from 'electron-squirrel-startup'
 import path from 'path'
@@ -44,9 +44,9 @@ const createWindow = async () => {
   }
 
   // Test active push message to Renderer-process.
-  mainWindow.webContents.on('did-finish-load', () => {
-    mainWindow.webContents.send('main-process-message', new Date().toLocaleString())
-  })
+  // mainWindow.webContents.on('dom-ready', () => {
+  //   mainWindow.webContents.send('main-process-message', 'Hello from the main process!')
+  // })
 }
 
 // Handle creating/removing shortcuts on Windows when installing/uninstalling.
@@ -80,5 +80,17 @@ app.on('activate', () => {
   }
 })
 
-// In this file you can include the rest of your app's specific main process code. You can also put them in separate
-// files and import them here.
+// ipcMain handlers
+ipcMain.on('renderer:ready', (event) => {
+  const window = BrowserWindow.fromWebContents(event.sender)
+  window.webContents.send('main:message', 'Hello from the main process!')
+})
+
+ipcMain.handle('dialog:open', async (event, options: Electron.MessageBoxOptions) => {
+  const window = BrowserWindow.fromWebContents(event.sender)
+  const { response } = await dialog.showMessageBox(window, options)
+  return response
+})
+
+// Here you can include the rest of your app's specific main process code.
+// You could also put them in separate files and import them here.

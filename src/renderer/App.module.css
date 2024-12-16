@@ -4,7 +4,7 @@ h1 {
 
 h2 {
   font-weight: normal;
-  color: var(--app-faded-text-color);
+  color: var(--app-light-text-color);
 }
 
 h3 {
@@ -32,7 +32,7 @@ hr {
   padding: 8px;
   border: solid 1px #dbdbdb;
   border-radius: 4px;
-  background-color: #fafafa;
+  background-color: #ffffff;
   box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.1);
 }
 
@@ -41,11 +41,48 @@ hr {
 }
 
 .version {
-  color: var(--app-faded-text-color);
+  color: var(--app-light-text-color);
   margin-left: auto;
 }
 
 img {
   width: 2rem;
   aspect-ratio: 1;
+}
+
+button {
+  background: #ffffff;
+  color: var(--app-dark-text-color);
+  border: solid 1px #dbdbdb;
+  padding: 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  display: inline-flex;
+  justify-content: space-around;
+  align-items: center;
+  outline: none;
+  min-width: 120px;
+
+  &:hover {
+    background: hsl(0, 0%, 98%);
+  }
+
+  &:active {
+    background: hsl(0, 0%, 96%);
+  }
+}
+
+pre {
+  height: 120px;
+  overflow: auto;
+  text-align: start;
+  line-height: 22px;
+  background-color: var(--app-dark-background-color);
+  color: lawngreen;
+  border-radius: 4px;
+  padding: 24px;
+}
+
+.comment {
+  color: var(--app-light-text-color);
 }

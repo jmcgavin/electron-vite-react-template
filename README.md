@@ -2,16 +2,16 @@
 
 A prebuilt project to help kickstart the creation of desktop apps using Electron, React, Vite & Typescript.
 
-<img src="assets/screenshot.png" />
+<img src="assets/screenshot.jpg" />
 
 ## Features
 
 - 🌟 Electron
-- 🔱 Vite Bundling + Hot Reload
+- 🔱 Vite
 - 🌀 TypeScript
 - ⚛️ React
 - 🧹 ESLint + Prettier
-- 📦 Electron Forge + ESM Support
+- 📦 Electron Forge
 
 ## Installation
 
@@ -19,16 +19,16 @@ A prebuilt project to help kickstart the creation of desktop apps using Electron
 git clone https://github.com/jmcgavin/electron-vite-react-template
 ```
 
-Install dependencies using [pnpm](https://pnpm.io/) or [yarn](https://www.npmjs.com/package/yarn) or [npm](https://www.npmjs.com/):
+Install dependencies:
 
 ```bash
-# using pnpm
+# pnpm
 pnpm install
 
-# or using yarn
+# or yarn
 yarn install
 
-# or using npm
+# or npm
 npm install
 ```
 
