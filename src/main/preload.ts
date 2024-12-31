@@ -8,7 +8,7 @@ declare global {
 }
 
 // The name of your preloaded API
-export const electronAPIKey = 'electronAPI'
+const electronAPIKey = 'electronAPI'
 
 const electronAPI = {
   /**
@@ -32,7 +32,7 @@ const electronAPI = {
    */
   rendererReady: (): void => ipcRenderer.send('renderer:ready'),
   /**
-   *
+   * Send a message to the main process
    */
   sendMessage: (
     callback: (message: string) => void,

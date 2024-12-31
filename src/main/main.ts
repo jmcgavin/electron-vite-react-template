@@ -42,11 +42,6 @@ const createWindow = async () => {
   } else {
     await mainWindow.loadFile(path.join(import.meta.dirname, `../renderer/${MAIN_WINDOW_VITE_NAME}/index.html`))
   }
-
-  // Test active push message to Renderer-process.
-  // mainWindow.webContents.on('dom-ready', () => {
-  //   mainWindow.webContents.send('main-process-message', 'Hello from the main process!')
-  // })
 }
 
 // Handle creating/removing shortcuts on Windows when installing/uninstalling.
